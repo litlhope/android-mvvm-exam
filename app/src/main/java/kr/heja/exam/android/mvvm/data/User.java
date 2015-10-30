@@ -1,11 +1,12 @@
 package kr.heja.exam.android.mvvm.data;
 
+import android.databinding.BaseObservable;
 import android.databinding.Bindable;
 
 /**
  * Created by wesi on 15. 10. 30..
  */
-public class User {
+public class User extends BaseObservable {
 	private String firstName;
 	private String lastName;
 
