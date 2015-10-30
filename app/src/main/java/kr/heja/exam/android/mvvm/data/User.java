@@ -1,35 +1,17 @@
 package kr.heja.exam.android.mvvm.data;
 
 import android.databinding.BaseObservable;
-import android.databinding.Bindable;
+import android.databinding.ObservableField;
 
 /**
  * Created by wesi on 15. 10. 30..
  */
 public class User extends BaseObservable {
-	private String firstName;
-	private String lastName;
+	public ObservableField<String> firstName = new ObservableField<>();
+	public ObservableField<String> lastName = new ObservableField<>();
 
 	public User(String firstName, String lastName) {
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-
-	@Bindable
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	@Bindable
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.firstName.set(firstName);
+		this.lastName.set(lastName);
 	}
 }

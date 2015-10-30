@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import kr.heja.exam.android.mvvm.BR;
 import kr.heja.exam.android.mvvm.data.User;
 import kr.heja.exam.android.mvvm.databinding.ActivityMainBinding;
 
@@ -24,19 +23,17 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void setUser() {
-		mUser.setFirstName("FTest");
-		mUser.setLastName("LTest");
-		mUser.notifyChange();
+		mUser.firstName.set("FTest2");
+		mUser.lastName.set("LTest2");
 	}
 
 	private void showUserDlg() {
-		mUser.setFirstName(mBinding.etFirstName.getText().toString());
-		mUser.setLastName(mBinding.etLastName.getText().toString());
-		mUser.notifyChange();
+		mUser.firstName.set(mBinding.etFirstName.getText().toString());
+		mUser.lastName.set(mBinding.etLastName.getText().toString());
 
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle("사용자 정보")
-				.setMessage("firstName: " + mUser.getFirstName() + " / lastName" + mUser.getLastName())
+				.setMessage("firstName: " + mUser.firstName.get() + " / lastName" + mUser.lastName.get())
 				.setPositiveButton("확인", new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
