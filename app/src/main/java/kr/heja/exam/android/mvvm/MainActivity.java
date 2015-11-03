@@ -28,8 +28,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void showUserDlg() {
-		mUser.firstName.set(mBinding.etFirstName.getText().toString());
-		mUser.lastName.set(mBinding.etLastName.getText().toString());
+		mUser.refresh(mBinding);
 
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle("사용자 정보")
