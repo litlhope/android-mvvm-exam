@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 	private void showUserDlg() {
-		mUser.refresh(mBinding);
+		mUser.applyFromView(mBinding);
 
 		AlertDialog.Builder alert = new AlertDialog.Builder(this);
 		alert.setTitle("사용자 정보")

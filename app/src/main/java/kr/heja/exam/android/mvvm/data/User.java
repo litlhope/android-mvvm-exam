@@ -17,7 +17,7 @@ public class User extends BaseObservable {
 		this.lastName.set(lastName);
 	}
 
-	public void refresh(ActivityMainBinding binding) {
+	public void applyFromView(ActivityMainBinding binding) {
 		this.firstName.set(binding.etFirstName.getText().toString());
 		this.lastName.set(binding.etLastName.getText().toString());
 	}
